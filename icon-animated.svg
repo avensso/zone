@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: Cubic extension package style -->
+  <defs>
+    <!-- Animated gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FA7846;stop-opacity:1">
+        <animate attributeName="stop-color" 
+                 values="#FA7846; #FF8556; #FA7846" 
+                 dur="3s" 
+                 repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#e86a3d;stop-opacity:1">
+        <animate attributeName="stop-color" 
+                 values="#e86a3d; #f0724d; #e86a3d" 
+                 dur="3s" 
+                 repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- Shimmer effect for text -->
+    <linearGradient id="shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FCF5E3;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#FFFFFF;stop-opacity:1">
+        <animate attributeName="offset" 
+                 values="0; 1; 0" 
+                 dur="4s" 
+                 repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#FCF5E3;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Main container with rounded corners -->
+  <rect x="64" y="64" width="384" height="384" rx="48" fill="url(#bgGradient)" filter="url(#shadow)"/>
+  
+  <!-- Light accent top edge (3D effect) -->
+  <path d="M 112 64 L 400 64 C 426.5 64 448 85.5 448 112 L 448 128 L 64 128 L 64 112 C 64 85.5 85.5 64 112 64 Z" 
+        fill="#FA7846" opacity="0.3">
+    <animate attributeName="opacity" 
+             values="0.3; 0.5; 0.3" 
+             dur="2s" 
+             repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Darker accent bottom edge -->
+  <path d="M 64 400 L 64 384 L 448 384 L 448 400 C 448 426.5 426.5 448 400 448 L 112 448 C 85.5 448 64 426.5 64 400 Z" 
+        fill="#000000" opacity="0.15"/>
+  
+  <!-- Side panel accent (pulsing) -->
+  <rect x="64" y="192" width="80" height="160" fill="#FCF5E3" rx="8">
+    <animate attributeName="opacity" 
+             values="0.2; 0.35; 0.2" 
+             dur="3s" 
+             repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- CodeNova branding with shimmer -->
+  <g id="branding">
+    <text x="256" y="290" 
+          font-family="'Funnel Sans', 'Segoe UI', sans-serif" 
+          font-weight="700" 
+          font-size="180" 
+          fill="url(#shimmer)" 
+          text-anchor="middle"
+          letter-spacing="-8">CN</text>
+    
+    <!-- Pulsing underline accent -->
+    <rect x="180" y="310" width="152" height="8" rx="4" fill="#FCF5E3">
+      <animate attributeName="opacity" 
+               values="0.6; 1; 0.6" 
+               dur="2s" 
+               repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Animated sparkle accent (AI indicator) -->
+  <g id="sparkle">
+    <!-- Pulsing glow -->
+    <circle cx="380" cy="132" r="20" fill="#FCF5E3">
+      <animate attributeName="r" 
+               values="18; 22; 18" 
+               dur="1.5s" 
+               repeatCount="indefinite"/>
+      <animate attributeName="opacity" 
+               values="0.8; 1; 0.8" 
+               dur="1.5s" 
+               repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Rotating star -->
+    <g transform-origin="380 128">
+      <path d="M 380 116 L 382 126 L 392 128 L 382 130 L 380 140 L 378 130 L 368 128 L 378 126 Z" 
+            fill="#FA7846">
+        <animateTransform attributeName="transform"
+                          type="rotate"
+                          from="0 380 128"
+                          to="360 380 128"
+                          dur="8s"
+                          repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- Sparkle particles -->
+    <circle cx="400" cy="112" r="2" fill="#FCF5E3">
+      <animate attributeName="opacity" 
+               values="0; 1; 0" 
+               dur="2s" 
+               begin="0s"
+               repeatCount="indefinite"/>
+    </circle>
+    <circle cx="360" cy="120" r="2" fill="#FCF5E3">
+      <animate attributeName="opacity" 
+               values="0; 1; 0" 
+               dur="2s" 
+               begin="0.5s"
+               repeatCount="indefinite"/>
+    </circle>
+    <circle cx="388" cy="148" r="2" fill="#FCF5E3">
+      <animate attributeName="opacity" 
+               values="0; 1; 0" 
+               dur="2s" 
+               begin="1s"
+               repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Subtle floating effect for entire icon -->
+  <animateTransform attributeName="transform"
+                    type="translate"
+                    values="0 0; 0 -3; 0 0"
+                    dur="4s"
+                    repeatCount="indefinite"/>
+</svg>
